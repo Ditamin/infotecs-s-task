@@ -18,11 +18,35 @@
 
 1. Клонирование репозитория:
 ```bash
-git clone <https://github.com/Ditamin/infotecs-s-task.git>
+git clone https://github.com/Ditamin/infotecs-s-task.git
 ```
 2. Для сборки библиотеки используется Makefile в директории logbook необходимо прописать
 ```bash
 make
+```
+
+### Основные функции
+
+#### `AddMessage(const std::string message, Level level)`
+
+Добавление сообщения с заданным уровнем в журнал. Если уровень ниже уровня по умолчанию, то сообщение игнорируется.
+
+#### Пример использования:
+
+```c++
+Logbook logbook("text.txt", LOW);
+logbook.AddMessage("Hello world", HIGH);
+```
+
+#### `AddMessage(const std::string message)`
+
+Добавление сообщения с уровнем по умолчанию в журнал.
+
+#### Пример использования:
+
+```c++
+Logbook logbook("text.txt", LOW);
+logbook.AddMessage("Hello world");
 ```
 
 ## Приложение
